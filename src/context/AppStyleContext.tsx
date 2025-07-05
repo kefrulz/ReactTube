@@ -1,4 +1,5 @@
 import React, {createContext, useContext} from "react";
+import {useColorScheme} from "react-native";
 
 type StyleType = "dark" | "light";
 
@@ -7,13 +8,23 @@ interface AppStyle {
   invertedTextColor: string;
   backgroundColor: string;
   backgroundColorAlpha: string;
+  accentColor: string;
 }
 
 const dark: AppStyle = {
-  textColor: "white",
-  invertedTextColor: "black",
-  backgroundColor: "black",
-  backgroundColorAlpha: "#111111cc",
+  textColor: "#FFFFFF",
+  invertedTextColor: "#000000",
+  backgroundColor: "#000000",
+  backgroundColorAlpha: "#1C1C1EAA",
+  accentColor: "#0A84FF",
+};
+
+const light: AppStyle = {
+  textColor: "#000000",
+  invertedTextColor: "#FFFFFF",
+  backgroundColor: "#F2F2F7",
+  backgroundColorAlpha: "#F2F2F7AA",
+  accentColor: "#0A84FF",
 };
 
 interface AppStyleContext {
@@ -31,12 +42,15 @@ interface Props {
 }
 
 export default function AppStyleProvider({children}: Props) {
+  const scheme = useColorScheme();
+  const type: StyleType = scheme === "light" ? "light" : "dark";
+  const style = type === "dark" ? dark : light;
   const value: AppStyleContext = {
-    type: "dark",
-    style: dark,
+    type,
+    style,
   };
 
-  return <Context.Provider value={value} children={children} />;
+  return <Context.Provider value={value}>{children}</Context.Provider>;
 }
 
 export function useAppStyle() {

@@ -3,6 +3,9 @@ import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import LanguageSelectorScreen from "../components/settings/screens/LanguageSelector";
 import PlayerResolutionSelectorScreen from "../components/settings/screens/PlayerResolutionSelector";
 import PlayerTypeSelectorScreen from "../components/settings/screens/PlayerSelector";
+import PlaybackSpeedSelectorScreen from "../components/settings/screens/PlaybackSpeedSelector";
+import UiScaleSelectorScreen from "../components/settings/screens/UiScaleSelector";
+import SponsorBlockSelector from "../components/settings/screens/SponsorBlockSelector";
 import SettingsScreen from "../screens/SettingsScreen";
 
 import TrackingSelector from "@/components/settings/screens/TrackingSelector";
@@ -13,6 +16,9 @@ export type SettingsStackParamList = {
   PlayerSelector: undefined;
   PlayerResolutionSelector: undefined;
   TrackingSelector: undefined;
+  PlaybackSpeedSelector: undefined;
+  UiScaleSelector: undefined;
+  SponsorBlockSelector: undefined;
 };
 
 const Stack = createNativeStackNavigator<SettingsStackParamList>();
@@ -34,6 +40,15 @@ export default function SettingsNavigator() {
         component={PlayerResolutionSelectorScreen}
       />
       <Stack.Screen name={"TrackingSelector"} component={TrackingSelector} />
+      <Stack.Screen
+        name={"PlaybackSpeedSelector"}
+        component={PlaybackSpeedSelectorScreen}
+      />
+      <Stack.Screen name={"UiScaleSelector"} component={UiScaleSelectorScreen} />
+      <Stack.Screen
+        name={"SponsorBlockSelector"}
+        component={SponsorBlockSelector}
+      />
     </Stack.Navigator>
   );
 }
