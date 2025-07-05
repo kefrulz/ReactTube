@@ -8,6 +8,7 @@ interface AppStyle {
   invertedTextColor: string;
   backgroundColor: string;
   backgroundColorAlpha: string;
+  accentColor: string;
 }
 
 const dark: AppStyle = {
@@ -15,6 +16,7 @@ const dark: AppStyle = {
   invertedTextColor: "black",
   backgroundColor: "black",
   backgroundColorAlpha: "#111111cc",
+  accentColor: "#ff0000",
 };
 
 const light: AppStyle = {
@@ -22,6 +24,7 @@ const light: AppStyle = {
   invertedTextColor: "white",
   backgroundColor: "white",
   backgroundColorAlpha: "#ddddddcc",
+  accentColor: "#ff0000",
 };
 
 interface AppStyleContext {

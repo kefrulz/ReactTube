@@ -1,4 +1,5 @@
 import {useEffect, useRef, useState} from "react";
+import {useAppData} from "@/context/AppDataContext";
 
 import {showMessage} from "./ShowFlashMessageHelper";
 
@@ -62,17 +63,21 @@ export function useSponsorBlock(
   currentTime: number,
   seek: (seconds: number) => void,
 ) {
+  const {appSettings} = useAppData();
   const [segments, setSegments] = useState<SkipSegment[]>([]);
   const currentSegment = useRef(0);
 
-  // TODO: Add check of settings if enabled?
+
+  const enabled = appSettings.sponsorBlockEnabled ?? true;
 
   useEffect(() => {
     // TODO: Check if videoID undefined
-    console.log("Fetching SponsorBlock Segments");
-    getSponsorBlockValues(videoID).then(setSegments).catch(console.warn);
-    currentSegment.current = 0;
-  }, [videoID]);
+    if (enabled) {
+      console.log("Fetching SponsorBlock Segments");
+      getSponsorBlockValues(videoID).then(setSegments).catch(console.warn);
+      currentSegment.current = 0;
+    }
+  }, [videoID, enabled]);
 
   useEffect(() => {
     const segment = segments[currentSegment.current];
@@ -94,5 +99,5 @@ export function useSponsorBlock(
       // Check if skipped manually
       currentSegment.current += 1;
     }
-  }, [currentTime]);
+  }, [currentTime, enabled]);
 }

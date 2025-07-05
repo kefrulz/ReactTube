@@ -6,7 +6,7 @@ import {useAppStyle} from "@/context/AppStyleContext";
 interface Props {
   onPress?: () => void;
   icon: string;
-  iconBackground: string;
+  iconBackground?: string;
   label: string;
   value: string;
 }
@@ -29,7 +29,11 @@ export default function SettingsSelectorOverview({
         {borderColor: appStyle.backgroundColorAlpha},
       ]}>
       <TouchableOpacity onPress={onPress} style={styles.row}>
-        <View style={[styles.rowIcon, {backgroundColor: iconBackground}]}>
+        <View
+          style={[
+            styles.rowIcon,
+            {backgroundColor: iconBackground ?? appStyle.accentColor},
+          ]}>
           <Feather
             color={"#fff"}
             // @ts-ignore
@@ -105,7 +109,7 @@ export function SettingsSelectorItem({
 interface PropsStandaloneSelectorItem {
   onPress?: () => void;
   icon: string;
-  iconBackground: string;
+  iconBackground?: string;
   label: string;
   selected: boolean;
 }
@@ -128,7 +132,11 @@ export function SettingsStandaloneSelector({
         {borderColor: appStyle.backgroundColorAlpha},
       ]}>
       <TouchableOpacity onPress={onPress} style={styles.row}>
-        <View style={[styles.rowIcon, {backgroundColor: iconBackground}]}>
+        <View
+          style={[
+            styles.rowIcon,
+            {backgroundColor: iconBackground ?? appStyle.accentColor},
+          ]}>
           <Feather
             color={"#fff"}
             // @ts-ignore
@@ -178,8 +186,12 @@ export function SettingsButton({
         {borderColor: appStyle.backgroundColorAlpha},
       ]}>
       <TouchableOpacity onPress={onPress} style={styles.row}>
-        {icon && iconBackground ? (
-          <View style={[styles.rowIcon, {backgroundColor: iconBackground}]}>
+        {icon && (iconBackground ?? appStyle.accentColor) ? (
+          <View
+            style={[
+              styles.rowIcon,
+              {backgroundColor: iconBackground ?? appStyle.accentColor},
+            ]}>
             <Feather
               color={"#fff"}
               // @ts-ignore

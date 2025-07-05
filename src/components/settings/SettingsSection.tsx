@@ -22,14 +22,17 @@ export default function SettingsSection({
       <Text
         style={[
           styles.sectionTitle,
-          {fontSize: 14 * scale, color: appStyle.textColor},
+          {fontSize: 14 * scale, color: appStyle.accentColor},
         ]}>
         {sectionTitle}
       </Text>
       <View
         style={[
           styles.sectionBody,
-          {backgroundColor: appStyle.backgroundColor},
+          {
+            backgroundColor: appStyle.backgroundColor,
+            borderColor: appStyle.backgroundColorAlpha,
+          },
         ]}>
         {children}
       </View>
@@ -46,7 +49,6 @@ const styles = StyleSheet.create({
     marginHorizontal: 24,
     fontSize: 14,
     fontWeight: "600",
-    color: "#a7a7a7",
     textTransform: "uppercase",
     letterSpacing: 1.2,
   },
@@ -54,6 +56,5 @@ const styles = StyleSheet.create({
     paddingLeft: 24,
     borderTopWidth: 1,
     borderBottomWidth: 1,
-    borderColor: "#e3e3e3",
   },
 });

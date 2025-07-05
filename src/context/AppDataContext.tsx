@@ -16,6 +16,7 @@ export interface AppSettings {
   trackingEnabled?: boolean;
   playbackRate?: number;
   uiScale?: number;
+  sponsorBlockEnabled?: boolean;
 }
 
 interface AppDataContext {
@@ -25,7 +26,7 @@ interface AppDataContext {
 
 // @ts-ignore
 const defaultContext: AppDataContext = {
-  appSettings: {playbackRate: 1, uiScale: 1},
+  appSettings: {playbackRate: 1, uiScale: 1, sponsorBlockEnabled: true},
   updateSettings: () => {},
 };
 
@@ -54,6 +55,7 @@ function setSettings(settings: Partial<AppSettings>) {
   const newValue: AppSettings = {
     playbackRate: 1,
     uiScale: 1,
+    sponsorBlockEnabled: true,
     ...curSettings,
     ...settings,
   };
@@ -66,7 +68,7 @@ interface Props {
 
 export default function AppDataContextProvider({children}: Props) {
   const [settings, setSettingState] = useState<AppSettings>(
-    getSettings() ?? {playbackRate: 1, uiScale: 1},
+    getSettings() ?? {playbackRate: 1, uiScale: 1, sponsorBlockEnabled: true},
   );
 
   const updateSettings = useCallback((data: Partial<AppSettings>) => {
