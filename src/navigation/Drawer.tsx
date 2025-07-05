@@ -154,7 +154,7 @@ const styles = StyleSheet.create({
   container: {
     justifyContent: "center",
     paddingStart: 40,
-    backgroundColor: "#333333",
+    backgroundColor: "#1C1C1E",
   },
 });
 
@@ -236,5 +236,6 @@ const itemStyles = StyleSheet.create({
   text: {
     fontSize: 20,
     paddingStart: 15,
+    fontFamily: "System",
   },
 });

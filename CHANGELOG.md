@@ -23,6 +23,16 @@
 ### ✨ Features
 
 * add playlist sync functionality and artist metadata support with multiple minor functionality adaptions for apple watch app ([#46](https://github.com/Duell10111/ReactTube/issues/46)) ([3fff181](https://github.com/Duell10111/ReactTube/commit/3fff181081ee43cee72f817258d68546d0dd1f3f))
+* add playback speed control for video player
+* allow adjusting overall UI scale
+* enable SponsorBlock skipping with optional toggle
+* adopt SmartTube-inspired accent theming
+
+## [0.3.1](https://github.com/Duell10111/ReactTube/compare/v0.3.0...v0.3.1) (2025-07-05)
+
+### 💄 Style
+
+* redesign entire interface with Apple-inspired theme and typography
 
 
 ### 🐛 Bugfixes
