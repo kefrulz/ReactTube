@@ -31,6 +31,7 @@ This project uses the [Youtube.js](https://github.com/LuanRT/YouTube.js) library
 | Adjustable playback speed                      | ✅ |
 | Adjustable UI scale                            | ✅ |
 | SponsorBlock skipping                          | ✅ |
+| Apple-inspired modern theme                    | ✅ |
 | Download videos for offline usage               | ⏳ (Music variant can be downloaded on phone and watch variant) |
 | Android TV Support                              | ❌ (UI mostly broken)                                           |
 

@@ -47,10 +47,7 @@ const App = () => {
                     <DownloaderContext>
                       <PlaylistManagerContext>
                         <StatusBar
-                          // TODO: Currently only dark-mode exists
-                          barStyle={
-                            isDarkMode ? "light-content" : "light-content"
-                          }
+                          barStyle={isDarkMode ? "light-content" : "dark-content"}
                         />
                         <VideoProvider>
                           <Navigation />

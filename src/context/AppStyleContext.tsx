@@ -12,19 +12,19 @@ interface AppStyle {
 }
 
 const dark: AppStyle = {
-  textColor: "white",
-  invertedTextColor: "black",
-  backgroundColor: "black",
-  backgroundColorAlpha: "#111111cc",
-  accentColor: "#ff0000",
+  textColor: "#FFFFFF",
+  invertedTextColor: "#000000",
+  backgroundColor: "#000000",
+  backgroundColorAlpha: "#1C1C1EAA",
+  accentColor: "#0A84FF",
 };
 
 const light: AppStyle = {
-  textColor: "black",
-  invertedTextColor: "white",
-  backgroundColor: "white",
-  backgroundColorAlpha: "#ddddddcc",
-  accentColor: "#ff0000",
+  textColor: "#000000",
+  invertedTextColor: "#FFFFFF",
+  backgroundColor: "#F2F2F7",
+  backgroundColorAlpha: "#F2F2F7AA",
+  accentColor: "#0A84FF",
 };
 
 interface AppStyleContext {

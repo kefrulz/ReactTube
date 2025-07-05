@@ -28,6 +28,12 @@
 * enable SponsorBlock skipping with optional toggle
 * adopt SmartTube-inspired accent theming
 
+## [0.3.1](https://github.com/Duell10111/ReactTube/compare/v0.3.0...v0.3.1) (2025-07-05)
+
+### 💄 Style
+
+* redesign entire interface with Apple-inspired theme and typography
+
 
 ### 🐛 Bugfixes
 

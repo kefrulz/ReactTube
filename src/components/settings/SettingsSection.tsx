@@ -47,8 +47,9 @@ const styles = StyleSheet.create({
   sectionTitle: {
     marginVertical: 8,
     marginHorizontal: 24,
-    fontSize: 14,
+    fontSize: 16,
     fontWeight: "600",
+    fontFamily: "System",
     textTransform: "uppercase",
     letterSpacing: 1.2,
   },
@@ -56,5 +57,6 @@ const styles = StyleSheet.create({
     paddingLeft: 24,
     borderTopWidth: 1,
     borderBottomWidth: 1,
+    borderRadius: 12,
   },
 });

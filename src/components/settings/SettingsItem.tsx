@@ -243,10 +243,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "flex-start",
     paddingRight: 24,
-    height: 50,
+    height: 56,
   },
   rowWrapper: {
     borderTopWidth: 1,
+    borderRadius: 12,
   },
   rowFirst: {
     borderTopWidth: 0,
@@ -254,7 +255,7 @@ const styles = StyleSheet.create({
   rowIcon: {
     width: 30,
     height: 30,
-    borderRadius: 4,
+    borderRadius: 8,
     alignItems: "center",
     justifyContent: "center",
     marginRight: 12,
@@ -262,6 +263,7 @@ const styles = StyleSheet.create({
   rowLabel: {
     fontSize: 17,
     fontWeight: "500",
+    fontFamily: "System",
   },
   rowSpacer: {
     flexGrow: 1,
@@ -272,5 +274,6 @@ const styles = StyleSheet.create({
     fontSize: 17,
     fontWeight: "500",
     marginRight: 4,
+    fontFamily: "System",
   },
 });
