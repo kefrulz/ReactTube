@@ -14,8 +14,6 @@ export interface AppSettings {
   localHlsEnabled?: boolean;
   languageSelected?: string;
   trackingEnabled?: boolean;
-  playbackRate?: number;
-  uiScale?: number;
 }
 
 interface AppDataContext {
@@ -25,7 +23,7 @@ interface AppDataContext {
 
 // @ts-ignore
 const defaultContext: AppDataContext = {
-  appSettings: {playbackRate: 1, uiScale: 1},
+  appSettings: {},
   updateSettings: () => {},
 };
 
@@ -52,8 +50,6 @@ function setSettings(settings: Partial<AppSettings>) {
 
   const curSettings = getSettings();
   const newValue: AppSettings = {
-    playbackRate: 1,
-    uiScale: 1,
     ...curSettings,
     ...settings,
   };
@@ -66,7 +62,7 @@ interface Props {
 
 export default function AppDataContextProvider({children}: Props) {
   const [settings, setSettingState] = useState<AppSettings>(
-    getSettings() ?? {playbackRate: 1, uiScale: 1},
+    getSettings() ?? {},
   );
 
   const updateSettings = useCallback((data: Partial<AppSettings>) => {
